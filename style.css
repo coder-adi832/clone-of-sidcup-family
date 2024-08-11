@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    color: #fff;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.nav{
+    height: 150px;
+    width: 100%;
+    padding: 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    font-weight: 500;
+    position: fixed;
+    z-index: 99;
+}
+.nav img{
+    height: 80px;
+}
+.cursor{
+    height: 25px;
+    width: 25px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+}
+.cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: rgb(153, 205, 50,0.37);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    filter: blur(30px);
+}
+.video_box{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+}
+video{
+    height: 100%;
+    width: 100%;
+    transform: scale(1.5);
+    object-fit: cover;
+}
+#main{
+    background-color: rgba(0,0,0,0.37);
+    position: relative;
+    /* z-index: 8; */
+}
+
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    -webkit-text-stroke: 1px yellowgreen;
+    top: -4px;
+    left: -4px;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 18px;
+    font-weight: 500;
+    width: 40%;
+    text-align: center;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+    transition: 0.5s all ease;
+    
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in-1 , #scroller-in-2{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4:hover{
+    color: yellowgreen;
+}
+#scroller h4{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 140px;
+    font-weight: 900;
+    font-family: gilroy;
+    color: transparent;
+    margin-right: 40px;
+    -webkit-text-stroke: 2px yellowgreen;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    margin-top: 40px;
+    display: flex;
+    height: 40vh;
+    width: 100%;
+    padding: 0 50px;
+    justify-content: space-around;
+}
+#about-us-in{
+    width: 40%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size: 40px;
+    font-weight: 900;
+}
+#about-us img{
+    margin-top: 40px;
+    height: 200px;
+    width: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-us-in p{
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 25px;
+}
+#card-container{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    position: relative;
+}
+.card{
+    width: 22%;
+    height: 80%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 7;
+    transition: 0.5s ease;
+}
+
+#card1{
+    background-image: url("media/golf_ball.jpg");
+}
+#card2{
+    background-image: url("media/oakland_hills_country_club_cover_picture.jpg");
+}
+#card3{
+    background-image: url("media/ultra-hd-golf-green-mountains-ghgmwzr9j8enhqx4.jpg");
+}
+#card1:hover{
+    transform: rotate3d(1,1,0,20deg);
+}
+#card2:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#card3:hover{
+    transform: rotate3d(1,1,0,20deg);
+}
+.overlay{
+    height: 100%;
+    padding: 30px;
+    background-color: yellowgreen;
+    opacity: 0;
+    transition: 0.5s ease;
+    
+}
+.overlay h2{
+    margin-top: 30%;
+    margin-bottom: 10%;
+    font-size: 40px;
+    color: #000;
+    font-weight: 1000;
+}
+.overlay p{
+    color: #000;
+    font-weight: 400;
+}
+.overlay:hover{
+    opacity: 1;
+}
+.green-bg{
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    background-image: linear-gradient(to right top,#B1E524,#099E3C);
+}
+#green_heading{
+    width: 48%;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+}
+.green-bg img{
+    height: 100%;
+    width: 100px;
+    object-fit: cover;
+    width: 13%;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p{
+    font-size: 30px;
+    font-weight: 1000;
+    width: 60%;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;;
+}
+#page3 img{
+    position: absolute;
+}
+#quote1{
+    top: 26%;
+    left: 13%;
+}
+#quote2{
+    rotate: 180deg;
+    bottom: 26%;
+    right: 13%;
+}
+
+#page4{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    position: relative;
+    z-index: 9;
+}
+
+.elem{
+    height: 70%;
+    width: 20%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: #000;
+    font-weight: 900;
+    position: absolute;
+    background-color: yellowgreen;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.elem h2:hover{
+    color: #fff;
+    background-color: transparent;
+}
+
+#page4 h1{
+    font-size: 100px;
+    top: -9%;
+    font-weight: 1000;
+    position: absolute;
+    color: #000;
+    -webkit-text-stroke: 0.1px white;
+}
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(to right top,#B1E524,#099E3C);
+    position: relative;
+    overflow: hidden;
+}
+#footer img{
+    height: 100%;
+    width: 15%;
+}
